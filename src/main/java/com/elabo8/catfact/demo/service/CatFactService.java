@@ -28,11 +28,8 @@ public class CatFactService {
         List<All> allFacts = restTemplate.getForEntity(url + "/facts", Fact.class).getBody().getAll();
         for (All fact : allFacts) {
             if (fact == null || fact.getUser() == null || fact.getUser().getFullName() == null) {
-                System.out.println(" >>> >>> >>> >>> >>> >>> >>> >>> >>> >>> >>> >>> >>> >>> >>> >>> >>>");
                 System.out.println(" >>> " + (fact == null ? "Fact is null" : fact.getUser() == null ? "User is null. Fact ID: " + fact.getId() : "First or Last is null. User ID: " + fact.getUser().getId()));
-                System.out.println(" >>> >>> >>> >>> >>> >>> >>> >>> >>> >>> >>> >>> >>> >>> >>> >>> >>>");
             } else {
-
                 if (userMap.containsKey(fact.getUser().getFullName())) {
                     Long totalVotes = userMap.get(fact.getUser().getFullName()) + fact.getUpvotes();
                     userMap.put(fact.getUser().getFullName(), totalVotes);
