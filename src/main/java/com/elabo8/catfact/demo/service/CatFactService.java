@@ -1,8 +1,8 @@
 package com.elabo8.catfact.demo.service;
 
-import com.elabo8.catfact.demo.domain.All;
 import com.elabo8.catfact.demo.domain.Fact;
-import com.elabo8.catfact.demo.domain.Result;
+import com.elabo8.catfact.demo.domain.Facts;
+import com.elabo8.catfact.demo.dto.Result;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -25,8 +25,8 @@ public class CatFactService {
 
     public Map<String, Long> findUsers() {
         Map<String, Long> userMap = new HashMap<>();
-        List<All> allFacts = restTemplate.getForEntity(url + "/facts", Fact.class).getBody().getAll();
-        for (All fact : allFacts) {
+        List<Fact> allFacts = restTemplate.getForEntity(url + "/facts", Facts.class).getBody().getFacts();
+        for (Fact fact : allFacts) {
             if (fact == null || fact.getUser() == null || fact.getUser().getFullName() == null) {
                 System.out.println(" >>> " + (fact == null ? "Fact is null" : fact.getUser() == null ? "User is null. Fact ID: " + fact.getId() : "First or Last is null. User ID: " + fact.getUser().getId()));
             } else {

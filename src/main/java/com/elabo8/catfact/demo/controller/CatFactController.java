@@ -1,6 +1,6 @@
 package com.elabo8.catfact.demo.controller;
 
-import com.elabo8.catfact.demo.domain.Result;
+import com.elabo8.catfact.demo.dto.Result;
 import com.elabo8.catfact.demo.service.CatFactService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

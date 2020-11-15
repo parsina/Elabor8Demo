@@ -1,4 +1,4 @@
-package com.elabo8.catfact.demo.domain;
+package com.elabo8.catfact.demo.dto;
 
 public class Result {
     private String userName;

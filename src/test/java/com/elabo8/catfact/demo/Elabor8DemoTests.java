@@ -1,6 +1,6 @@
 package com.elabo8.catfact.demo;
 
-import com.elabo8.catfact.demo.domain.Result;
+import com.elabo8.catfact.demo.dto.Result;
 import com.elabo8.catfact.demo.service.CatFactService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
